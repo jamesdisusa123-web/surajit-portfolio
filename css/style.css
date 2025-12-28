@@ -199,4 +199,25 @@ footer {
     font-size: 38px;
   }
 }
+/* ================= CONTACT ICONS ================= */
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin: 30px 0;
+}
+
+.contact-icons img {
+  width: 26px;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 6px rgba(34,211,238,0.3));
+}
+
+.contact-icons img:hover {
+  opacity: 1;
+  transform: translateY(-4px);
+  filter: drop-shadow(0 0 12px rgba(34,211,238,0.8));
+}
+
 
