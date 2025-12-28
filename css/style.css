@@ -74,6 +74,10 @@ section {
   border-radius: 12px;
   filter: grayscale(100%) brightness(0.8);
   box-shadow: 0 0 30px rgba(34,211,238,0.25);
+  transition: filter 0.6s ease;
+}
+.hero-image img:hover {
+  filter: grayscale(0%);
 }
 
 /* ================= ABOUT ================= */
@@ -195,3 +199,4 @@ footer {
     font-size: 38px;
   }
 }
+
