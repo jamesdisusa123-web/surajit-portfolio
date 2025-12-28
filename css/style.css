@@ -1,0 +1,197 @@
+/* ================= GLOBAL RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #0a0f1c;
+  color: #dbeafe;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ================= COMMON ================= */
+section {
+  padding: 80px 8%;
+}
+
+.section-title {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #67e8f9;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: #22d3ee;
+  display: block;
+  margin-top: 10px;
+  box-shadow: 0 0 10px #22d3ee;
+}
+
+/* ================= HERO ================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.name {
+  font-size: 48px;
+  color: #e0f2fe;
+  text-shadow: 0 0 15px rgba(34,211,238,0.6);
+}
+
+.title {
+  font-size: 22px;
+  margin-top: 10px;
+  color: #67e8f9;
+}
+
+.intro {
+  margin-top: 20px;
+  color: #cbd5f5;
+  max-width: 520px;
+}
+
+.hero-image img {
+  width: 300px;
+  border-radius: 12px;
+  filter: grayscale(100%) brightness(0.8);
+  box-shadow: 0 0 30px rgba(34,211,238,0.25);
+}
+
+/* ================= ABOUT ================= */
+.about p {
+  margin-bottom: 18px;
+  max-width: 900px;
+}
+
+/* ================= CAPABILITIES ================= */
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.capability-box {
+  background: rgba(15,23,42,0.9);
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid rgba(34,211,238,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.capability-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(34,211,238,0.35);
+}
+
+.capability-box h4 {
+  color: #67e8f9;
+  margin-bottom: 12px;
+}
+
+/* ================= QUOTE ================= */
+.quote {
+  text-align: center;
+  background: linear-gradient(180deg, #020617, #020617);
+}
+
+.quote blockquote {
+  font-size: 26px;
+  font-style: italic;
+  color: #e0f2fe;
+  text-shadow: 0 0 12px rgba(34,211,238,0.4);
+}
+
+/* ================= EXPLORING ================= */
+.exploring ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.exploring li {
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.exploring li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: #22d3ee;
+}
+
+/* ================= CONTACT ================= */
+.contact {
+  text-align: center;
+}
+
+.contact-note {
+  color: #94a3b8;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  padding: 30px;
+  text-align: center;
+  font-size: 14px;
+  color: #64748b;
+  background: #020617;
+}
+
+/* ================= SCROLL ANIMATION BASE ================= */
+.reveal {
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+.from-left {
+  transform: translateX(-80px);
+}
+
+.from-right {
+  transform: translateX(80px);
+}
+
+.from-bottom {
+  transform: translateY(80px);
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translate(0);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 220px;
+  }
+
+  .name {
+    font-size: 38px;
+  }
+}
