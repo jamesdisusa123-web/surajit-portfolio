@@ -226,6 +226,17 @@ footer {
   transform: translateY(-4px);
   filter: drop-shadow(0 0 12px rgba(34,211,238,0.8));
 }
+/* ===== TUBES CURSOR CANVAS ===== */
+#tube-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+}
+
 
 
 
