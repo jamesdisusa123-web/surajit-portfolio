@@ -75,16 +75,20 @@ section {
   box-shadow: 0 0 30px rgba(34,211,238,0.35);
 }
 
+
 /* ================= ABOUT ================= */
+
 .about {
-  margin: 80px auto;
+  margin: 80px auto;       
   max-width: 900px;
-  text-align: left;
+  text-align: center;       
 }
 
 .about p {
-  text-align: center;
+  margin-bottom: 18px;
+  color: #cbd5f5;
 }
+
 
 
 /* ================= CAPABILITIES ================= */
@@ -220,5 +224,6 @@ footer svg {
     font-size: 38px;
   }
 }
+
 
 
