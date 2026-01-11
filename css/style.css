@@ -40,12 +40,13 @@ section {
 .hero {
   min-height: 100vh;
   display: flex;
-  flex-direction: row;         
+  flex-direction: row;        /* LEFT text, RIGHT image */
   align-items: center;
   justify-content: space-between;
-  gap: 60px;
   padding: 0 10%;
+  gap: 80px;
 }
+
 
 
 .hero-content {
@@ -68,14 +69,34 @@ section {
   margin-top: 20px;
   color: #cbd5f5;
 }
+.hero-image {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-end;
+}
 
 /* PROFILE IMAGE */
+
 .hero-image img {
   width: 300px;
-  flex-shrink: 0;
   border-radius: 14px;
+
+  /* clean image */
   filter: saturate(1.15) contrast(1.05) brightness(1.05);
-  box-shadow: 0 0 30px rgba(34,211,238,0.35);
+
+  /* neon glow */
+  box-shadow:
+    0 0 0 2px rgba(34,211,238,0.6),
+    0 0 20px rgba(34,211,238,0.6),
+    0 0 40px rgba(34,211,238,0.35);
+
+  transition: all 0.4s ease;
+}
+.hero-image img:hover {
+  box-shadow:
+    0 0 0 2px rgba(34,211,238,1),
+    0 0 30px rgba(34,211,238,0.8),
+    0 0 60px rgba(34,211,238,0.6);
 }
 
 
@@ -234,6 +255,7 @@ footer svg {
     font-size: 38px;
   }
 }
+
 
 
 
