@@ -195,9 +195,9 @@ footer svg {
 
 /* ================= SCROLL ANIMATION ================= */
 .reveal {
-  opacity: 0;
-  transition: all 0.8s ease;
+  opacity: 1;
 }
+
 
 .from-left { transform: translateX(-80px); }
 .from-right { transform: translateX(80px); }
@@ -218,3 +218,4 @@ footer svg {
     font-size: 38px;
   }
 }
+
