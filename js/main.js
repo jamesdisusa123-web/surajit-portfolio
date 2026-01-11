@@ -1,5 +1,7 @@
 import TubesCursor from "https://esm.sh/threejs-components@0.19/cursor/tubes";
 
+console.log("USING ESM.SH VERSION");
+
 new TubesCursor(document.getElementById("canvas"), {
   tubes: {
     colors: ["#22d3ee", "#6366f1", "#10b981"],
