@@ -2,7 +2,7 @@ const canvas = document.getElementById("tube-cursor");
 const ctx = canvas.getContext("2d");
 
 let w, h;
-let trails = [];
+let points = [];
 
 function resize() {
   w = canvas.width = window.innerWidth;
@@ -12,42 +12,39 @@ window.addEventListener("resize", resize);
 resize();
 
 window.addEventListener("mousemove", (e) => {
-  trails.push({
-    x: e.clientX,
-    y: e.clientY,
-    alpha: 1
-  });
+  points.push({ x: e.clientX, y: e.clientY });
+  if (points.length > 40) points.shift();
 });
 
 function draw() {
   ctx.clearRect(0, 0, w, h);
 
-  for (let i = 0; i < trails.length - 1; i++) {
-    const p1 = trails[i];
-    const p2 = trails[i + 1];
+  if (points.length < 2) return requestAnimationFrame(draw);
 
-    const gradient = ctx.createLinearGradient(
-      p1.x, p1.y,
-      p2.x, p2.y
-    );
+  ctx.lineWidth = 3;
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
 
-    gradient.addColorStop(0, "rgba(34,211,238," + p1.alpha + ")");
-    gradient.addColorStop(0.5, "rgba(99,102,241," + p1.alpha + ")");
-    gradient.addColorStop(1, "rgba(16,185,129," + p1.alpha + ")");
+  const gradient = ctx.createLinearGradient(
+    points[0].x, points[0].y,
+    points[points.length - 1].x, points[points.length - 1].y
+  );
 
-    ctx.strokeStyle = gradient;
-    ctx.lineWidth = 3;
-    ctx.lineCap = "round";
+  gradient.addColorStop(0, "rgba(34,211,238,0.7)");
+  gradient.addColorStop(0.5, "rgba(99,102,241,0.6)");
+  gradient.addColorStop(1, "rgba(16,185,129,0.5)");
 
-    ctx.beginPath();
-    ctx.moveTo(p1.x, p1.y);
-    ctx.lineTo(p2.x, p2.y);
-    ctx.stroke();
+  ctx.strokeStyle = gradient;
+  ctx.beginPath();
+  ctx.moveTo(points[0].x, points[0].y);
 
-    p1.alpha -= 0.02;
+  for (let i = 1; i < points.length - 1; i++) {
+    const midX = (points[i].x + points[i + 1].x) / 2;
+    const midY = (points[i].y + points[i + 1].y) / 2;
+    ctx.quadraticCurveTo(points[i].x, points[i].y, midX, midY);
   }
 
-  trails = trails.filter(p => p.alpha > 0);
+  ctx.stroke();
   requestAnimationFrame(draw);
 }
 
