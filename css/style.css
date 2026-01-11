@@ -230,6 +230,16 @@ footer {
   filter: drop-shadow(0 0 12px rgba(34,211,238,0.8));
 }
 
+/* ===== FOOTER ICON FIX ===== */
+
+footer img {
+  width: 32px;
+  height: 32px;
+  max-width: 32px;
+  max-height: 32px;
+  object-fit: contain;
+}
+
 
 
 
