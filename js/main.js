@@ -1,6 +1,4 @@
-import TubesCursor from "https://cdn.jsdelivr.net/npm/threejs-components@0.19/build/cursor/tubes.min.js";
-
-console.log("main.js loaded");
+import TubesCursor from "https://esm.sh/threejs-components@0.19/cursor/tubes";
 
 new TubesCursor(document.getElementById("canvas"), {
   tubes: {
