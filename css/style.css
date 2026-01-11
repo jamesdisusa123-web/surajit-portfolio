@@ -24,7 +24,6 @@ section {
   color: #67e8f9;
   text-transform: uppercase;
   letter-spacing: 2px;
-  position: relative;
 }
 
 .section-title::after {
@@ -44,9 +43,8 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
-
-
 
 .hero-content {
   max-width: 600px;
@@ -67,33 +65,24 @@ section {
 .intro {
   margin-top: 20px;
   color: #cbd5f5;
-  max-width: 520px;
 }
 
+/* PROFILE IMAGE */
 .hero-image img {
   width: 300px;
-  border-radius: 12px;
-  filter: grayscale(100%) brightness(0.8);
-  box-shadow: 0 0 30px rgba(34,211,238,0.25);
-  transition: filter 0.6s ease;
-}
-/* ===== PROFILE IMAGE FINAL FIX ===== */
-.hero-image img {
+  border-radius: 14px;
   filter: saturate(1.15) contrast(1.05) brightness(1.05);
   box-shadow: 0 0 30px rgba(34,211,238,0.35);
 }
-.hero-image img {
-  border-radius: 14px;
-}
-
-
 
 /* ================= ABOUT ================= */
-.about p {
-  .about {
+.about {
   margin-top: 80px;
-  margin-bottom: 18px;
+}
+
+.about p {
   max-width: 900px;
+  margin-bottom: 18px;
 }
 
 /* ================= CAPABILITIES ================= */
@@ -124,7 +113,7 @@ section {
 /* ================= QUOTE ================= */
 .quote {
   text-align: center;
-  background: linear-gradient(180deg, #020617, #020617);
+  background: #020617;
 }
 
 .quote blockquote {
@@ -162,6 +151,30 @@ section {
   color: #94a3b8;
 }
 
+/* CONTACT ICONS */
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin: 30px 0;
+}
+
+.contact-icons img,
+.contact-icons svg {
+  width: 26px;
+  height: 26px;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 6px rgba(34,211,238,0.3));
+}
+
+.contact-icons img:hover,
+.contact-icons svg:hover {
+  opacity: 1;
+  transform: translateY(-4px);
+  filter: drop-shadow(0 0 12px rgba(34,211,238,0.8));
+}
+
 /* ================= FOOTER ================= */
 footer {
   padding: 30px;
@@ -171,23 +184,24 @@ footer {
   background: #020617;
 }
 
-/* ================= SCROLL ANIMATION BASE ================= */
+/* FOOTER ICON SAFE SIZE */
+footer img,
+footer svg {
+  width: 28px;
+  height: 28px;
+  margin-top: 12px;
+  object-fit: contain;
+}
+
+/* ================= SCROLL ANIMATION ================= */
 .reveal {
   opacity: 0;
   transition: all 0.8s ease;
 }
 
-.from-left {
-  transform: translateX(-80px);
-}
-
-.from-right {
-  transform: translateX(80px);
-}
-
-.from-bottom {
-  transform: translateY(80px);
-}
+.from-left { transform: translateX(-80px); }
+.from-right { transform: translateX(80px); }
+.from-bottom { transform: translateY(80px); }
 
 .reveal.show {
   opacity: 1;
@@ -196,11 +210,6 @@ footer {
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
   .hero-image img {
     width: 220px;
   }
@@ -209,39 +218,3 @@ footer {
     font-size: 38px;
   }
 }
-/* ================= CONTACT ICONS ================= */
-.contact-icons {
-  display: flex;
-  justify-content: center;
-  gap: 22px;
-  margin: 30px 0;
-}
-
-.contact-icons img {
-  width: 26px;
-  opacity: 0.7;
-  transition: all 0.3s ease;
-  filter: drop-shadow(0 0 6px rgba(34,211,238,0.3));
-}
-
-.contact-icons img:hover {
-  opacity: 1;
-  transform: translateY(-4px);
-  filter: drop-shadow(0 0 12px rgba(34,211,238,0.8));
-}
-
-/* ===== FOOTER ICON FIX ===== */
-
-footer img {
-  width: 32px;
-  height: 32px;
-  max-width: 32px;
-  max-height: 32px;
-  object-fit: contain;
-}
-
-
-
-
-
-
