@@ -77,13 +77,15 @@ section {
 
 /* ================= ABOUT ================= */
 .about {
-  margin-top: 80px;
+  margin: 80px auto;
+  max-width: 900px;
+  text-align: left;
 }
 
 .about p {
-  max-width: 900px;
-  margin-bottom: 18px;
+  text-align: center;
 }
+
 
 /* ================= CAPABILITIES ================= */
 .capability-grid {
@@ -218,4 +220,5 @@ footer svg {
     font-size: 38px;
   }
 }
+
 
