@@ -3,6 +3,7 @@ const ctx = canvas.getContext("2d");
 
 let w, h;
 let points = [];
+let lastMoveTime = Date.now();
 
 function resize() {
   w = canvas.width = window.innerWidth;
@@ -12,8 +13,15 @@ window.addEventListener("resize", resize);
 resize();
 
 window.addEventListener("mousemove", (e) => {
-  points.push({ x: e.clientX, y: e.clientY });
-  if (points.length > 50) points.shift();
+  lastMoveTime = Date.now();
+
+  points.push({
+    x: e.clientX,
+    y: e.clientY,
+    life: 1 // opacity
+  });
+
+  if (points.length > 60) points.shift();
 });
 
 function draw() {
@@ -23,7 +31,6 @@ function draw() {
   ctx.lineCap = "round";
   ctx.lineJoin = "round";
 
-  // Glow
   ctx.shadowBlur = 18;
   ctx.shadowColor = "rgba(34,211,238,0.8)";
 
@@ -31,14 +38,22 @@ function draw() {
     const p1 = points[i];
     const p2 = points[i + 1];
 
+    // Fade logic
+    const timeSinceMove = Date.now() - lastMoveTime;
+    if (timeSinceMove > 50) {
+      p1.life -= 0.03;
+    }
+
+    if (p1.life <= 0) continue;
+
     const gradient = ctx.createLinearGradient(
       p1.x, p1.y,
       p2.x, p2.y
     );
 
-    gradient.addColorStop(0, "rgba(34,211,238,0.9)"); // cyan
-    gradient.addColorStop(0.5, "rgba(99,102,241,0.9)"); // blue
-    gradient.addColorStop(1, "rgba(16,185,129,0.9)"); // green
+    gradient.addColorStop(0, `rgba(34,211,238,${p1.life})`);
+    gradient.addColorStop(0.5, `rgba(99,102,241,${p1.life})`);
+    gradient.addColorStop(1, `rgba(16,185,129,${p1.life})`);
 
     ctx.strokeStyle = gradient;
     ctx.beginPath();
@@ -46,6 +61,9 @@ function draw() {
     ctx.lineTo(p2.x, p2.y);
     ctx.stroke();
   }
+
+  // Remove dead points
+  points = points.filter(p => p.life > 0);
 
   requestAnimationFrame(draw);
 }
