@@ -1,56 +1,54 @@
 const canvas = document.getElementById("tube-cursor");
 const ctx = canvas.getContext("2d");
 
-let width, height;
+let w, h;
 let trails = [];
-let mouse = { x: 0, y: 0 };
 
 function resize() {
-  width = canvas.width = window.innerWidth;
-  height = canvas.height = window.innerHeight;
+  w = canvas.width = window.innerWidth;
+  h = canvas.height = window.innerHeight;
 }
 window.addEventListener("resize", resize);
 resize();
 
 window.addEventListener("mousemove", (e) => {
-  mouse.x = e.clientX;
-  mouse.y = e.clientY;
-
   trails.push({
-    x: mouse.x,
-    y: mouse.y,
-    life: 60
+    x: e.clientX,
+    y: e.clientY,
+    alpha: 1
   });
 });
 
-function animate() {
-  ctx.clearRect(0, 0, width, height);
+function draw() {
+  ctx.clearRect(0, 0, w, h);
 
-  trails.forEach((p, i) => {
-    p.life--;
+  for (let i = 0; i < trails.length - 1; i++) {
+    const p1 = trails[i];
+    const p2 = trails[i + 1];
 
     const gradient = ctx.createLinearGradient(
-      p.x - 20, p.y - 20,
-      p.x + 20, p.y + 20
+      p1.x, p1.y,
+      p2.x, p2.y
     );
 
-    gradient.addColorStop(0, "rgba(34,211,238,0.6)");
-    gradient.addColorStop(0.5, "rgba(99,102,241,0.6)");
-    gradient.addColorStop(1, "rgba(16,185,129,0.6)");
+    gradient.addColorStop(0, "rgba(34,211,238," + p1.alpha + ")");
+    gradient.addColorStop(0.5, "rgba(99,102,241," + p1.alpha + ")");
+    gradient.addColorStop(1, "rgba(16,185,129," + p1.alpha + ")");
 
     ctx.strokeStyle = gradient;
     ctx.lineWidth = 3;
-    ctx.beginPath();
-    ctx.moveTo(p.x, p.y);
-    ctx.lineTo(
-      p.x + Math.sin(p.life * 0.3) * 15,
-      p.y + Math.cos(p.life * 0.3) * 15
-    );
-    ctx.stroke();
-  });
+    ctx.lineCap = "round";
 
-  trails = trails.filter(p => p.life > 0);
-  requestAnimationFrame(animate);
+    ctx.beginPath();
+    ctx.moveTo(p1.x, p1.y);
+    ctx.lineTo(p2.x, p2.y);
+    ctx.stroke();
+
+    p1.alpha -= 0.02;
+  }
+
+  trails = trails.filter(p => p.alpha > 0);
+  requestAnimationFrame(draw);
 }
 
-animate();
+draw();
