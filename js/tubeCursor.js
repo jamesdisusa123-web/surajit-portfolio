@@ -13,38 +13,40 @@ resize();
 
 window.addEventListener("mousemove", (e) => {
   points.push({ x: e.clientX, y: e.clientY });
-  if (points.length > 40) points.shift();
+  if (points.length > 50) points.shift();
 });
 
 function draw() {
   ctx.clearRect(0, 0, w, h);
 
-  if (points.length < 2) return requestAnimationFrame(draw);
-
-  ctx.lineWidth = 3;
+  ctx.lineWidth = 3.5;
   ctx.lineCap = "round";
   ctx.lineJoin = "round";
 
-  const gradient = ctx.createLinearGradient(
-    points[0].x, points[0].y,
-    points[points.length - 1].x, points[points.length - 1].y
-  );
+  // Glow
+  ctx.shadowBlur = 18;
+  ctx.shadowColor = "rgba(34,211,238,0.8)";
 
-  gradient.addColorStop(0, "rgba(34,211,238,0.7)");
-  gradient.addColorStop(0.5, "rgba(99,102,241,0.6)");
-  gradient.addColorStop(1, "rgba(16,185,129,0.5)");
+  for (let i = 0; i < points.length - 1; i++) {
+    const p1 = points[i];
+    const p2 = points[i + 1];
 
-  ctx.strokeStyle = gradient;
-  ctx.beginPath();
-  ctx.moveTo(points[0].x, points[0].y);
+    const gradient = ctx.createLinearGradient(
+      p1.x, p1.y,
+      p2.x, p2.y
+    );
 
-  for (let i = 1; i < points.length - 1; i++) {
-    const midX = (points[i].x + points[i + 1].x) / 2;
-    const midY = (points[i].y + points[i + 1].y) / 2;
-    ctx.quadraticCurveTo(points[i].x, points[i].y, midX, midY);
+    gradient.addColorStop(0, "rgba(34,211,238,0.9)"); // cyan
+    gradient.addColorStop(0.5, "rgba(99,102,241,0.9)"); // blue
+    gradient.addColorStop(1, "rgba(16,185,129,0.9)"); // green
+
+    ctx.strokeStyle = gradient;
+    ctx.beginPath();
+    ctx.moveTo(p1.x, p1.y);
+    ctx.lineTo(p2.x, p2.y);
+    ctx.stroke();
   }
 
-  ctx.stroke();
   requestAnimationFrame(draw);
 }
 
