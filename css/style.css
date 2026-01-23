@@ -249,47 +249,26 @@ section {
 }
 
 
+/* ================= FOOTER (MATRIX SAFE) ================= */
 
-/* ================= FOOTER ================= */
-
-.site-footer {
+footer {
   position: relative;
   z-index: 1;
-  padding: 32px 16px;
+  padding: 28px 16px;
   text-align: center;
-  background: transparent;
-  border-top: 1px solid rgba(34,211,238,0.15);
+
+  background: transparent;   /* MATRIX VISIBLE */
+  font-family: monospace;
 }
 
-.footer-text {
-  font-size: 14px;
-  color: #94a3b8;
-  margin-bottom: 16px;
+footer p {
+  font-size: 13px;
+  color: #22c55e;
+  letter-spacing: 2px;
+  margin: 0;
 }
 
-/* footer icons wrapper */
-.footer-icons {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-}
 
-/* icon safe size */
-.footer-icons img {
-  width: 26px;
-  height: 26px;
-  opacity: 0.75;
-  object-fit: contain;
-  transition: all 0.3s ease;
-  filter: drop-shadow(0 0 6px rgba(34,211,238,0.3));
-}
-
-/* hover glow */
-.footer-icons img:hover {
-  opacity: 1;
-  transform: translateY(-3px);
-  filter: drop-shadow(0 0 12px rgba(34,211,238,0.8));
-}
 
 /* ================= SCROLL ANIMATION ================= */
 .reveal {
@@ -435,6 +414,7 @@ section {
     0 0 25px rgba(34,211,238,0.7),
     0 0 60px rgba(34,211,238,0.5);
 }
+
 
 
 
