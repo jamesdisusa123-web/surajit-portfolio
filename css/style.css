@@ -336,6 +336,19 @@ footer svg {
   margin-top: 24px;
 }
 
+.bg-glow {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, #041d45 0%, #000814 70%, #000000 100%);
+  z-index: -1;
+  animation: pulseBG 20s ease infinite;
+}
+
+@keyframes pulseBG {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
 
 
 
