@@ -372,6 +372,7 @@ footer svg {
 
 /* MATRIX BACKGROUND FIX */
 #matrix-bg {
+  outline: 2px solid red;
   position: fixed;
   top: 0;
   left: 0;
@@ -380,6 +381,7 @@ footer svg {
   z-index: -1;
   pointer-events: none;
 }
+
 
 
 
