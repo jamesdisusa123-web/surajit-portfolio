@@ -91,18 +91,30 @@ section {
   margin: 18px 0;
 }
 
+/* ===== HERO IMAGE FINAL SIZE FIX ===== */
 .landing-image img {
-  width: 260px;
-  height: 260px;
+  width: 200px;          /* 🔥 ছোট করা */
+  height: 200px;
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid #22c55e;
+
   box-shadow:
-    0 0 18px rgba(34,197,94,0.8),
-    0 0 45px rgba(34,197,94,0.6),
-    0 0 90px rgba(34,197,94,0.4);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+    0 0 14px rgba(34,197,94,0.7),
+    0 0 32px rgba(34,197,94,0.6),
+    0 0 60px rgba(34,197,94,0.4);
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
+
+.landing-image img:hover {
+  transform: scale(1.04);   /* বেশি বড় হবে না */
+  box-shadow:
+    0 0 22px rgba(34,197,94,1),
+    0 0 50px rgba(34,197,94,0.8),
+    0 0 90px rgba(34,197,94,0.6);
+}
+
 
 .landing-image img:hover {
   transform: scale(1.07);
@@ -281,3 +293,4 @@ footer p {
     height: 210px;
   }
 }
+
