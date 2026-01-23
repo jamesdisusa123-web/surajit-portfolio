@@ -18,8 +18,8 @@ let drops = new Array(columns).fill(1);
 
 function draw() {
 
-  ctx.fillStyle = "rgba(34, 211, 238, 0.08)";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+ ctx.fillStyle = "rgba(0, 0, 0, 0.15)";
+ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 
   ctx.fillStyle = "#22d3ee";
