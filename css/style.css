@@ -40,14 +40,14 @@ section {
 }
 
 .section-title {
-  font-size: 42px;
+  font-size: 40px;
   text-align: center;
   letter-spacing: 4px;
   color: #22c55e;
-  margin-bottom: 48px;
+  margin-bottom: 46px;
   text-shadow:
-    0 0 20px rgba(34,197,94,0.9),
-    0 0 50px rgba(34,197,94,0.7);
+    0 0 18px rgba(34,197,94,0.9),
+    0 0 45px rgba(34,197,94,0.7);
 }
 
 /* ================= HERO ================= */
@@ -63,20 +63,21 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 28px;
+  gap: 26px;
   max-width: 900px;
+  width: 100%;
 }
 
 /* HERO NAME */
 .hero.landing h1 {
-  font-size: 72px;
+  font-size: 70px;
   font-weight: 800;
   letter-spacing: 5px;
   color: #22c55e;
   text-shadow:
-    0 0 20px rgba(34,197,94,1),
-    0 0 55px rgba(34,197,94,0.8),
-    0 0 110px rgba(34,197,94,0.6);
+    0 0 18px rgba(34,197,94,1),
+    0 0 50px rgba(34,197,94,0.8),
+    0 0 100px rgba(34,197,94,0.6);
 }
 
 /* SUBTITLE */
@@ -86,39 +87,39 @@ section {
   letter-spacing: 2px;
 }
 
-/* ================= HERO IMAGE (FINAL FIX) ================= */
-.landing-image {
+/* ================= HERO IMAGE (LOCKED SIZE) ================= */
+.hero.landing .landing-image {
+  width: 160px;
+  height: 160px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin: 20px 0;
-  width: 100%;
+  justify-content: center;
+  overflow: hidden;
+  margin: 18px 0;
 }
 
-.landing-image img {
-  width: 180px;
-  height: 180px;
-  max-width: 180px;
-  max-height: 180px;
-
-  object-fit: cover;
+.hero.landing .landing-image img {
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
+  object-fit: cover;
+  display: block;
+
   border: 3px solid #22c55e;
-
   box-shadow:
-    0 0 14px rgba(34,197,94,0.7),
-    0 0 32px rgba(34,197,94,0.6),
-    0 0 60px rgba(34,197,94,0.4);
+    0 0 12px rgba(34,197,94,0.7),
+    0 0 30px rgba(34,197,94,0.6),
+    0 0 55px rgba(34,197,94,0.4);
 
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.landing-image img:hover {
+.hero.landing .landing-image img:hover {
   transform: scale(1.05);
   box-shadow:
-    0 0 24px rgba(34,197,94,1),
+    0 0 22px rgba(34,197,94,1),
     0 0 55px rgba(34,197,94,0.85),
-    0 0 95px rgba(34,197,94,0.65);
+    0 0 90px rgba(34,197,94,0.65);
 }
 
 /* ================= BUTTONS ================= */
@@ -132,7 +133,7 @@ section {
 
 .landing-links a,
 .contact-icons a {
-  padding: 15px 34px;
+  padding: 14px 32px;
   border: 1px solid #22c55e;
   color: #22c55e;
   font-family: monospace;
@@ -142,7 +143,7 @@ section {
   text-decoration: none;
 
   box-shadow:
-    inset 0 0 14px rgba(34,197,94,0.25),
+    inset 0 0 12px rgba(34,197,94,0.25),
     0 0 22px rgba(34,197,94,0.35);
 
   transition: all 0.3s ease;
@@ -164,7 +165,7 @@ section {
   font-size: 12px;
   letter-spacing: 3px;
   color: #22c55e;
-  margin-top: 30px;
+  margin-top: 28px;
 }
 
 /* ================= ABOUT ================= */
@@ -285,67 +286,13 @@ footer p {
     font-size: 42px;
   }
 
-  .landing-image img {
-    width: 150px;
-    height: 150px;
+  .hero.landing .landing-image {
+    width: 140px;
+    height: 140px;
+  }
+
+  .hero.landing .landing-image img {
+    width: 140px;
+    height: 140px;
   }
 }
-
-/* ===== HERO IMAGE HARD FIX (FINAL) ===== */
-.hero.landing .landing-image img {
-  width: 160px !important;
-  height: 160px !important;
-  max-width: 160px !important;
-  max-height: 160px !important;
-
-  border-radius: 50% !important;
-  object-fit: cover !important;
-  display: block;
-
-  border: 3px solid #22c55e;
-
-  box-shadow:
-    0 0 12px rgba(34,197,94,0.7),
-    0 0 28px rgba(34,197,94,0.6),
-    0 0 50px rgba(34,197,94,0.4);
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hero.landing .landing-image img:hover {
-  transform: scale(1.05);
-}
-
-/* ===== ABSOLUTE HERO IMAGE FIX ===== */
-
-/* lock container */
-.hero.landing .landing-image {
-  width: 160px !important;
-  height: 160px !important;
-  max-width: 160px !important;
-  max-height: 160px !important;
-  overflow: hidden !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* lock image */
-.hero.landing .landing-image img {
-  width: 160px !important;
-  height: 160px !important;
-  max-width: 160px !important;
-  max-height: 160px !important;
-
-  border-radius: 50% !important;
-  object-fit: cover !important;
-
-  border: 3px solid #22c55e;
-  box-shadow:
-    0 0 12px rgba(34,197,94,0.7),
-    0 0 28px rgba(34,197,94,0.6),
-    0 0 50px rgba(34,197,94,0.4);
-
-  display: block !important;
-}
-
