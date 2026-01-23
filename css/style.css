@@ -378,8 +378,10 @@ footer svg {
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  background: #020617;
+  pointer-events: none;
 }
+
+
 
 
 
