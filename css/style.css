@@ -39,13 +39,16 @@ section {
 }
 
 .section-title {
-  font-size: 26px;
+  font-size: 34px;              /* ⬅️ size increased */
   color: #22c55e;
-  letter-spacing: 3px;
-  margin-bottom: 30px;
+  letter-spacing: 4px;
+  margin-bottom: 40px;
   text-align: center;
-  text-shadow: 0 0 10px rgba(34,197,94,0.6);
+  text-shadow:
+    0 0 15px rgba(34,197,94,0.8),
+    0 0 35px rgba(34,197,94,0.6);
 }
+
 
 /* ================= HERO (CYBER GHOST) ================= */
 .hero.landing {
@@ -182,11 +185,16 @@ section {
 }
 
 .quote blockquote {
-  font-size: 24px;
+  font-size: 32px;          /* ⬅️ bigger */
+  text-align: center;       /* ⬅️ center */
   font-style: italic;
-  color: #a7f3d0;
-  text-shadow: 0 0 10px rgba(34,197,94,0.4);
+  color: #22c55e;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 15px rgba(34,197,94,0.8),
+    0 0 40px rgba(34,197,94,0.6);
 }
+
 
 /* ================= EXPLORING ================= */
 .exploring ul {
@@ -262,3 +270,44 @@ footer p {
     height: 200px;
   }
 }
+
+/* ===== CURRENTLY EXPLORING – CYBER BOX ===== */
+
+.exploring {
+  text-align: center;
+}
+
+.exploring ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.exploring li {
+  list-style: none;
+  padding: 18px 26px;
+  border: 1px solid #22c55e;
+  border-radius: 8px;
+  font-family: monospace;
+  letter-spacing: 1.5px;
+  color: #22c55e;
+  background: rgba(0,0,0,0.6);
+
+  box-shadow:
+    inset 0 0 14px rgba(34,197,94,0.25),
+    0 0 20px rgba(34,197,94,0.3);
+
+  transition: all 0.3s ease;
+}
+
+.exploring li:hover {
+  background: #22c55e;
+  color: #000;
+  box-shadow:
+    0 0 30px rgba(34,197,94,1),
+    0 0 70px rgba(34,197,94,0.8);
+}
+
+
