@@ -3,12 +3,13 @@ console.log("MATRIX JS ACTIVE");
 const canvas = document.getElementById("matrix-bg");
 const ctx = canvas.getContext("2d");
 
-function resize() {
+function resizeCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 }
-resize();
-window.addEventListener("resize", resize);
+resizeCanvas();                    // MUST be here
+window.addEventListener("resize", resizeCanvas);
+
 
 const chars = "01アイウエオカキクケコ";
 const fontSize = 14;
@@ -16,7 +17,8 @@ let columns = Math.floor(canvas.width / fontSize);
 let drops = new Array(columns).fill(1);
 
 function draw() {
-  ctx.fillStyle = "rgba(2,6,23,0.2)";
+
+  ctx.fillStyle = "rgba(34,211,238,0.8)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   ctx.fillStyle = "#22d3ee";
