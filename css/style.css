@@ -2,6 +2,7 @@
 
 #matrix-bg {
   position: fixed;
+  inset: 0;
   top: 0;
   left: 0;
   width: 100vw;
@@ -406,6 +407,7 @@ section {
     0 0 25px rgba(34,211,238,0.7),
     0 0 60px rgba(34,211,238,0.5);
 }
+
 
 
 
