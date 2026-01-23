@@ -316,3 +316,36 @@ footer p {
   transform: scale(1.05);
 }
 
+/* ===== ABSOLUTE HERO IMAGE FIX ===== */
+
+/* lock container */
+.hero.landing .landing-image {
+  width: 160px !important;
+  height: 160px !important;
+  max-width: 160px !important;
+  max-height: 160px !important;
+  overflow: hidden !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* lock image */
+.hero.landing .landing-image img {
+  width: 160px !important;
+  height: 160px !important;
+  max-width: 160px !important;
+  max-height: 160px !important;
+
+  border-radius: 50% !important;
+  object-fit: cover !important;
+
+  border: 3px solid #22c55e;
+  box-shadow:
+    0 0 12px rgba(34,197,94,0.7),
+    0 0 28px rgba(34,197,94,0.6),
+    0 0 50px rgba(34,197,94,0.4);
+
+  display: block !important;
+}
+
