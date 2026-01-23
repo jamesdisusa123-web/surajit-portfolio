@@ -207,21 +207,44 @@ section {
 }
 
 /* ================= FOOTER ================= */
-footer {
-  padding: 30px;
+
+.site-footer {
+  position: relative;
+  z-index: 1;
+  padding: 32px 16px;
   text-align: center;
-  font-size: 14px;
-  color: #64748b;
   background: #020617;
+  border-top: 1px solid rgba(34,211,238,0.15);
 }
 
-/* FOOTER ICON SAFE SIZE */
-footer img,
-footer svg {
-  width: 28px;
-  height: 28px;
-  margin-top: 12px;
+.footer-text {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+/* footer icons wrapper */
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+/* icon safe size */
+.footer-icons img {
+  width: 26px;
+  height: 26px;
+  opacity: 0.75;
   object-fit: contain;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 0 6px rgba(34,211,238,0.3));
+}
+
+/* hover glow */
+.footer-icons img:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+  filter: drop-shadow(0 0 12px rgba(34,211,238,0.8));
 }
 
 /* ================= SCROLL ANIMATION ================= */
@@ -382,6 +405,7 @@ footer svg {
   z-index: -1;
   pointer-events: none;
 }
+
 
 
 
