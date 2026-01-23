@@ -329,4 +329,41 @@ footer p {
 }
 
 
+/* ================= HERO IMAGE – CYBER GHOST FINAL ================= */
+
+.hero .hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.hero .hero-image img {
+  width: 160px !important;
+  height: 160px !important;
+  max-width: 160px !important;
+  max-height: 160px !important;
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  border: 2px solid #22ff66;
+
+  /* CYBER GHOST NEON GLOW */
+  box-shadow:
+    0 0 15px rgba(34,255,102,0.9),
+    0 0 35px rgba(34,255,102,0.7),
+    0 0 70px rgba(34,255,102,0.5);
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.hero .hero-image img:hover {
+  transform: scale(1.06);
+  box-shadow:
+    0 0 20px rgba(34,255,102,1),
+    0 0 50px rgba(34,255,102,0.9),
+    0 0 100px rgba(34,255,102,0.8);
+}
+
 
