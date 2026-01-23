@@ -322,9 +322,10 @@ footer p {
 
 /* container lock */
 .hero .hero-image {
-  width: 130px !important;
-  height: 130px !important;
+  width: 160px !important;
+  height: 160px !important;
   overflow: hidden !important;
   margin: 18px auto;
 }
+
 
