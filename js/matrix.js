@@ -8,7 +8,7 @@ function resizeCanvas() {
 resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 
-const letters = "hahahahahahhahaahahahhaha";
+const letters = "アカサタナハマヤ0123456789#$%";
 const fontSize = 15;
 let columns = Math.floor(canvas.width / fontSize);
 let drops = Array(columns).fill(1);
