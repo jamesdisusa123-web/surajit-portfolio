@@ -6,9 +6,11 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 0;
+  z-index: -1;              /* 🔥 MOST IMPORTANT */
   pointer-events: none;
+  opacity: 0.35;            /* soft matrix */
 }
+
 
 
 /* ================= GLOBAL RESET ================= */
@@ -404,6 +406,7 @@ section {
     0 0 25px rgba(34,211,238,0.7),
     0 0 60px rgba(34,211,238,0.5);
 }
+
 
 
 
