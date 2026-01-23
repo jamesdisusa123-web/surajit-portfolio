@@ -267,8 +267,14 @@ section {
 .contact-note {
   margin-top: 26px;
   font-family: monospace;
-  color: #86efac;
+  letter-spacing: 2px;
+
+  color: #facc15;   /* 🔥 YELLOW */
+  text-shadow:
+    0 0 6px rgba(250,204,21,0.8),
+    0 0 14px rgba(250,204,21,0.6);
 }
+
 
 /* ================= FOOTER ================= */
 footer {
@@ -365,5 +371,6 @@ footer p {
     0 0 50px rgba(34,255,102,0.9),
     0 0 100px rgba(34,255,102,0.8);
 }
+
 
 
