@@ -1,3 +1,5 @@
+console.log("MATRIX JS ACTIVE");
+
 const canvas = document.getElementById("matrix-bg");
 const ctx = canvas.getContext("2d");
 
