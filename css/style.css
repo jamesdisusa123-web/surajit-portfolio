@@ -17,19 +17,9 @@ body {
 #matrix-bg {
   position: fixed;
   inset: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
   opacity: 0.25;
   pointer-events: none;
-}
-
-/* CONTENT LAYER */
-section,
-footer {
-  position: relative;
-  z-index: 1;
-  background: transparent;
+  z-index: 0;
 }
 
 /* HERO */
@@ -37,103 +27,82 @@ footer {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   gap: 22px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
-/* HERO NAME */
+/* NAME */
 .hero .name {
-  font-size: 54px;   /* চাইলে 60 করো */
+  font-size: 50px;
   letter-spacing: 4px;
   color: #22ff66;
   text-shadow:
-    0 0 15px rgba(34,255,102,1),
-    0 0 40px rgba(34,255,102,0.8),
-    0 0 80px rgba(34,255,102,0.6);
+    0 0 15px #22ff66,
+    0 0 40px #22ff66;
 }
 
-/* SUBTITLE */
+/* TITLE */
 .hero .title {
   font-size: 18px;
   color: #86efac;
-  letter-spacing: 2px;
 }
 
-/* 🔥 HERO IMAGE — THIS IS THE REAL FIX */
+/* ✅ HERO IMAGE — THIS WILL WORK */
 .hero-image {
-  width: 220px;        /* ← IMAGE SIZE */
-  height: 220px;
+  width: 200px;
+  height: 200px;
   margin: 20px 0;
 }
 
 .hero-image img {
-  width: 220px;        /* ← IMAGE SIZE */
-  height: 220px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   object-fit: cover;
 
   border: 3px solid #22ff66;
 
-  /* CYBER GHOST GLOW */
   box-shadow:
     0 0 20px rgba(34,255,102,1),
     0 0 60px rgba(34,255,102,0.9),
-    0 0 120px rgba(34,255,102,0.8);
+    0 0 120px rgba(34,255,102,0.7);
 
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: transform 0.3s ease;
 }
 
 .hero-image img:hover {
-  transform: scale(1.06);
-  box-shadow:
-    0 0 30px rgba(34,255,102,1),
-    0 0 90px rgba(34,255,102,1),
-    0 0 160px rgba(34,255,102,0.9);
+  transform: scale(1.05);
 }
 
 /* BUTTONS */
 .contact-icons {
   display: flex;
-  gap: 18px;
   flex-wrap: wrap;
+  gap: 16px;
   justify-content: center;
 }
 
 .contact-icons a {
-  padding: 14px 32px;
+  padding: 12px 28px;
   border: 1px solid #22ff66;
   color: #22ff66;
-  font-family: monospace;
-  letter-spacing: 2px;
-  border-radius: 6px;
   text-decoration: none;
-  background: rgba(0,0,0,0.6);
-  transition: 0.3s;
+  font-family: monospace;
+  border-radius: 6px;
 }
 
 .contact-icons a:hover {
   background: #22ff66;
   color: #000;
-  box-shadow: 0 0 40px rgba(34,255,102,1);
 }
 
 /* CREATED BY */
 .contact-note {
   font-size: 12px;
   letter-spacing: 3px;
-  color: #facc15;   /* YELLOW */
-}
-
-/* FOOTER */
-footer {
-  padding: 26px;
-  text-align: center;
-  font-family: monospace;
-}
-
-footer p {
-  color: #22ff66;
-  font-size: 12px;
+  color: #facc15;
 }
