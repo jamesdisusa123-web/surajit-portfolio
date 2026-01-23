@@ -370,15 +370,16 @@ footer svg {
 
 
 
-/* ===== MATRIX BACKGROUND ===== */
-
+/* MATRIX BACKGROUND FIX */
 #matrix-bg {
   position: fixed;
-  inset: 0;
-  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
   background: #020617;
 }
-
 
 
 
