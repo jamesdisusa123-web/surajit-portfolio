@@ -304,10 +304,10 @@ footer p {
 
 /* ===== FINAL HERO IMAGE SIZE OVERRIDE ===== */
 .hero .hero-image img {
-  width: 130px !important;
-  height: 130px !important;
-  max-width: 130px !important;
-  max-height: 130px !important;
+  width: 160px !important;
+  height: 160px !important;
+  max-width: 160px !important;
+  max-height: 160px !important;
 
   border-radius: 50% !important;
   object-fit: cover !important;
@@ -327,5 +327,6 @@ footer p {
   overflow: hidden !important;
   margin: 18px auto;
 }
+
 
 
