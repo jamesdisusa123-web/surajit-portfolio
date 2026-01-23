@@ -1,32 +1,24 @@
-console.log("MATRIX JS ACTIVE");
-
 const canvas = document.getElementById("matrix-bg");
 const ctx = canvas.getContext("2d");
 
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-resizeCanvas();                    // MUST be here
-window.addEventListener("resize", resizeCanvas);
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-
-const chars = "01アイウエオカキクケコ";
+const letters = "01";
 const fontSize = 14;
-let columns = Math.floor(canvas.width / fontSize);
-let drops = new Array(columns).fill(1);
+const columns = Math.floor(canvas.width / fontSize);
+const drops = Array(columns).fill(1);
 
-function draw() {
+function drawMatrix() {
+  // 🔴 IMPORTANT: black fade, NOT cyan
+  ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
 
- ctx.fillStyle = "rgba(0, 0, 0, 0.15)";
-ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-
-  ctx.fillStyle = "#22d3ee";
+  ctx.fillStyle = "#22d3ee"; // cyan text only
   ctx.font = fontSize + "px monospace";
 
   for (let i = 0; i < drops.length; i++) {
-    const text = chars[Math.floor(Math.random() * chars.length)];
+    const text = letters[Math.floor(Math.random() * letters.length)];
     ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
     if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
@@ -36,4 +28,9 @@ ctx.fillRect(0, 0, canvas.width, canvas.height);
   }
 }
 
-setInterval(draw, 50);
+setInterval(drawMatrix, 40);
+
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
