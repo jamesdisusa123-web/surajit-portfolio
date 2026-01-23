@@ -106,3 +106,34 @@ body {
   letter-spacing: 3px;
   color: #facc15;
 }
+
+/* ===== ABSOLUTE FINAL HERO IMAGE FIX ===== */
+.landing-image {
+  width: 160px !important;
+  height: 160px !important;
+  max-width: 160px !important;
+  max-height: 160px !important;
+  margin: 24px auto !important;
+  overflow: hidden !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.landing-image img {
+  width: 160px !important;
+  height: 160px !important;
+  max-width: 160px !important;
+  max-height: 160px !important;
+
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  display: block !important;
+
+  border: 3px solid #22ff66 !important;
+
+  box-shadow:
+    0 0 18px rgba(34,255,102,1),
+    0 0 45px rgba(34,255,102,0.9),
+    0 0 90px rgba(34,255,102,0.8) !important;
+}
