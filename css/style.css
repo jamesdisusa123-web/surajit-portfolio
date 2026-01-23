@@ -68,17 +68,20 @@ section {
   width: 100%;
 }
 
-/* HERO NAME */
+/* HERO NAME – FINAL SIZE */
 .hero.landing h1 {
-  font-size: 70px;
+  font-size: 58px;          /* ⬅️ ছোট করা */
   font-weight: 800;
-  letter-spacing: 5px;
+  letter-spacing: 4px;
   color: #22c55e;
+  text-align: center;
+
   text-shadow:
-    0 0 18px rgba(34,197,94,1),
-    0 0 50px rgba(34,197,94,0.8),
-    0 0 100px rgba(34,197,94,0.6);
+    0 0 12px rgba(34,197,94,0.9),
+    0 0 28px rgba(34,197,94,0.7),
+    0 0 60px rgba(34,197,94,0.5);
 }
+
 
 /* SUBTITLE */
 .hero.landing .subtitle {
@@ -283,8 +286,10 @@ footer p {
 /* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
   .hero.landing h1 {
-    font-size: 42px;
+    font-size: 36px;
+    letter-spacing: 2px;
   }
+}
 
   .hero.landing .landing-image {
     width: 140px;
@@ -296,3 +301,30 @@ footer p {
     height: 140px;
   }
 }
+
+/* ===== FINAL HERO IMAGE SIZE OVERRIDE ===== */
+.hero .hero-image img {
+  width: 130px !important;
+  height: 130px !important;
+  max-width: 130px !important;
+  max-height: 130px !important;
+
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  display: block !important;
+
+  border: 3px solid #22c55e;
+  box-shadow:
+    0 0 10px rgba(34,197,94,0.6),
+    0 0 24px rgba(34,197,94,0.5),
+    0 0 45px rgba(34,197,94,0.35);
+}
+
+/* container lock */
+.hero .hero-image {
+  width: 130px !important;
+  height: 130px !important;
+  overflow: hidden !important;
+  margin: 18px auto;
+}
+
