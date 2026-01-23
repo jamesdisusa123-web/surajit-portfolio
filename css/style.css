@@ -1,32 +1,30 @@
-/* ================= RESET ================= */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ================= BODY ================= */
+/* BODY */
 body {
   background: #000;
   color: #d1fae5;
   font-family: "Segoe UI", Arial, sans-serif;
-  line-height: 1.7;
   overflow-x: hidden;
-  position: relative;
 }
 
-/* ================= MATRIX BACKGROUND ================= */
+/* MATRIX */
 #matrix-bg {
   position: fixed;
   inset: 0;
   width: 100vw;
   height: 100vh;
   z-index: 0;
-  pointer-events: none;
   opacity: 0.25;
+  pointer-events: none;
 }
 
-/* ================= CONTENT LAYER ================= */
+/* CONTENT LAYER */
 section,
 footer {
   position: relative;
@@ -34,76 +32,55 @@ footer {
   background: transparent;
 }
 
-/* ================= COMMON ================= */
-section {
-  padding: 90px 8%;
-}
-
-.section-title {
-  font-size: 40px;
-  text-align: center;
-  letter-spacing: 4px;
-  color: #22ff66;
-  margin-bottom: 46px;
-  text-shadow:
-    0 0 18px rgba(34,255,102,0.9),
-    0 0 45px rgba(34,255,102,0.7);
-}
-
-/* ================= HERO ================= */
+/* HERO */
 .hero {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
   gap: 22px;
 }
 
 /* HERO NAME */
 .hero .name {
-  font-size: 56px;          /* ⬅️ smaller than before */
-  font-weight: 800;
+  font-size: 54px;   /* চাইলে 60 করো */
   letter-spacing: 4px;
   color: #22ff66;
   text-shadow:
-    0 0 14px rgba(34,255,102,0.9),
-    0 0 32px rgba(34,255,102,0.7),
-    0 0 60px rgba(34,255,102,0.5);
+    0 0 15px rgba(34,255,102,1),
+    0 0 40px rgba(34,255,102,0.8),
+    0 0 80px rgba(34,255,102,0.6);
 }
 
 /* SUBTITLE */
 .hero .title {
   font-size: 18px;
-  letter-spacing: 2px;
   color: #86efac;
+  letter-spacing: 2px;
 }
 
-/* ================= HERO IMAGE (FINAL – WORKS) ================= */
+/* 🔥 HERO IMAGE — THIS IS THE REAL FIX */
 .hero-image {
-  width: 180px;          /* 🔥 FINAL SIZE */
-  height: 180px;
+  width: 220px;        /* ← IMAGE SIZE */
+  height: 220px;
   margin: 20px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .hero-image img {
-  width: 180px;
-  height: 180px;
+  width: 220px;        /* ← IMAGE SIZE */
+  height: 220px;
   border-radius: 50%;
   object-fit: cover;
-  display: block;
 
   border: 3px solid #22ff66;
 
   /* CYBER GHOST GLOW */
   box-shadow:
-    0 0 18px rgba(34,255,102,1),
-    0 0 45px rgba(34,255,102,0.9),
-    0 0 90px rgba(34,255,102,0.7);
+    0 0 20px rgba(34,255,102,1),
+    0 0 60px rgba(34,255,102,0.9),
+    0 0 120px rgba(34,255,102,0.8);
 
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
@@ -111,17 +88,17 @@ section {
 .hero-image img:hover {
   transform: scale(1.06);
   box-shadow:
-    0 0 28px rgba(34,255,102,1),
-    0 0 70px rgba(34,255,102,1),
-    0 0 140px rgba(34,255,102,0.9);
+    0 0 30px rgba(34,255,102,1),
+    0 0 90px rgba(34,255,102,1),
+    0 0 160px rgba(34,255,102,0.9);
 }
 
-/* ================= BUTTONS ================= */
+/* BUTTONS */
 .contact-icons {
   display: flex;
+  gap: 18px;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 18px;
 }
 
 .contact-icons a {
@@ -131,146 +108,32 @@ section {
   font-family: monospace;
   letter-spacing: 2px;
   border-radius: 6px;
-  background: rgba(0,0,0,0.65);
   text-decoration: none;
-
-  box-shadow:
-    inset 0 0 12px rgba(34,255,102,0.25),
-    0 0 22px rgba(34,255,102,0.35);
-
-  transition: all 0.3s ease;
+  background: rgba(0,0,0,0.6);
+  transition: 0.3s;
 }
 
 .contact-icons a:hover {
   background: #22ff66;
   color: #000;
-  transform: translateY(-3px);
-  box-shadow:
-    0 0 40px rgba(34,255,102,1),
-    0 0 90px rgba(34,255,102,0.9);
+  box-shadow: 0 0 40px rgba(34,255,102,1);
 }
 
-/* ================= HERO FOOT NOTE ================= */
+/* CREATED BY */
 .contact-note {
-  font-family: monospace;
   font-size: 12px;
   letter-spacing: 3px;
-  color: #facc15;          /* 🔥 YELLOW */
-  text-shadow:
-    0 0 6px rgba(250,204,21,0.8),
-    0 0 14px rgba(250,204,21,0.6);
+  color: #facc15;   /* YELLOW */
 }
 
-/* ================= ABOUT ================= */
-.about {
-  max-width: 900px;
-  margin: auto;
-  text-align: center;
-}
-
-.about p {
-  font-size: 18px;
-  color: #c7f9cc;
-  margin-bottom: 18px;
-}
-
-/* ================= CAPABILITIES ================= */
-.capability-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 26px;
-}
-
-.capability-box {
-  padding: 26px;
-  border-radius: 10px;
-  border: 1px solid rgba(34,255,102,0.25);
-  background: rgba(0,0,0,0.7);
-  transition: all 0.3s ease;
-}
-
-.capability-box:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 40px rgba(34,255,102,0.8);
-}
-
-.capability-box h4 {
-  color: #22ff66;
-  margin-bottom: 12px;
-}
-
-/* ================= QUOTE ================= */
-.quote blockquote {
-  font-size: 34px;
-  text-align: center;
-  font-style: italic;
-  color: #22ff66;
-  letter-spacing: 2px;
-  text-shadow:
-    0 0 25px rgba(34,255,102,0.9),
-    0 0 60px rgba(34,255,102,0.7);
-}
-
-/* ================= EXPLORING ================= */
-.exploring {
-  text-align: center;
-}
-
-.exploring ul {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 22px;
-  margin-top: 40px;
-}
-
-.exploring li {
-  list-style: none;
-  padding: 20px 30px;
-  border: 1px solid #22ff66;
-  border-radius: 8px;
-  font-family: monospace;
-  letter-spacing: 1.5px;
-  color: #22ff66;
-  background: rgba(0,0,0,0.7);
-
-  box-shadow:
-    inset 0 0 14px rgba(34,255,102,0.25),
-    0 0 26px rgba(34,255,102,0.4);
-
-  transition: all 0.3s ease;
-}
-
-.exploring li:hover {
-  background: #22ff66;
-  color: #000;
-  box-shadow:
-    0 0 45px rgba(34,255,102,1),
-    0 0 100px rgba(34,255,102,0.9);
-}
-
-/* ================= FOOTER ================= */
+/* FOOTER */
 footer {
-  padding: 28px 16px;
+  padding: 26px;
   text-align: center;
   font-family: monospace;
 }
 
 footer p {
-  font-size: 12px;
-  letter-spacing: 3px;
   color: #22ff66;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 900px) {
-  .hero .name {
-    font-size: 38px;
-  }
-
-  .hero-image,
-  .hero-image img {
-    width: 150px;
-    height: 150px;
-  }
+  font-size: 12px;
 }
