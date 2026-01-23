@@ -1,20 +1,25 @@
 const canvas = document.getElementById("matrix-bg");
 const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
 
 const letters = "01";
 const fontSize = 14;
-const columns = Math.floor(canvas.width / fontSize);
-const drops = Array(columns).fill(1);
+let columns = Math.floor(canvas.width / fontSize);
+let drops = Array(columns).fill(1);
 
 function drawMatrix() {
-  // 🔴 IMPORTANT: black fade, NOT cyan
-  ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
+  // background fade (BLACK, not green)
+  ctx.fillStyle = "rgba(0, 0, 0, 0.12)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "#22d3ee"; // cyan text only
+  // matrix text color (GREEN)
+  ctx.fillStyle = "#22c55e";
   ctx.font = fontSize + "px monospace";
 
   for (let i = 0; i < drops.length; i++) {
@@ -29,8 +34,3 @@ function drawMatrix() {
 }
 
 setInterval(drawMatrix, 40);
-
-window.addEventListener("resize", () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-});
