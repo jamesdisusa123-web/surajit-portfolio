@@ -290,3 +290,29 @@ footer p {
     height: 150px;
   }
 }
+
+/* ===== HERO IMAGE HARD FIX (FINAL) ===== */
+.hero.landing .landing-image img {
+  width: 160px !important;
+  height: 160px !important;
+  max-width: 160px !important;
+  max-height: 160px !important;
+
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  display: block;
+
+  border: 3px solid #22c55e;
+
+  box-shadow:
+    0 0 12px rgba(34,197,94,0.7),
+    0 0 28px rgba(34,197,94,0.6),
+    0 0 50px rgba(34,197,94,0.4);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero.landing .landing-image img:hover {
+  transform: scale(1.05);
+}
+
