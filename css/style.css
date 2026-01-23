@@ -6,6 +6,7 @@
 }
 
 body {
+  background: #020617;
   font-family: "Segoe UI", Arial, sans-serif;
   color: #dbeafe;
   line-height: 1.7;
@@ -381,6 +382,7 @@ footer svg {
   z-index: -1;
   pointer-events: none;
 }
+
 
 
 
