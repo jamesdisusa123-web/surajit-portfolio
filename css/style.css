@@ -81,27 +81,6 @@ section {
   font-size: 1.1rem;
 }
 
-/* ================= PROFILE IMAGE ================= */
-.landing-image img {
-  width: 240px;
-  height: 240px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid #22c55e;
-  box-shadow:
-    0 0 15px rgba(34,197,94,0.8),
-    0 0 40px rgba(34,197,94,0.6),
-    0 0 90px rgba(34,197,94,0.4);
-  transition: all 0.35s ease;
-}
-
-.landing-image img:hover {
-  transform: scale(1.06);
-  box-shadow:
-    0 0 25px rgba(34,197,94,1),
-    0 0 70px rgba(34,197,94,0.9),
-    0 0 140px rgba(34,197,94,0.7);
-}
 
 /* ================= HERO BUTTONS ================= */
 .landing-links {
@@ -309,5 +288,31 @@ footer p {
     0 0 30px rgba(34,197,94,1),
     0 0 70px rgba(34,197,94,0.8);
 }
+
+/* ===== HERO ROUND IMAGE (FINAL) ===== */
+
+.hero-image img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;        /* ⭕ ROUND */
+  border: 3px solid #22c55e;
+
+  box-shadow:
+    0 0 15px rgba(34,197,94,0.6),
+    0 0 35px rgba(34,197,94,0.5),
+    0 0 60px rgba(34,197,94,0.3);
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 20px rgba(34,197,94,0.9),
+    0 0 50px rgba(34,197,94,0.8),
+    0 0 90px rgba(34,197,94,0.6);
+}
+
 
 
