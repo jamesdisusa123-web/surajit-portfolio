@@ -1,0 +1,201 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= BODY ================= */
+body {
+  background: #000;
+  color: #c7f9cc;
+  font-family: "Segoe UI", Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ================= MATRIX ================= */
+#matrix-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.25;
+}
+
+/* ================= HERO ================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  width: 100%;
+}
+
+.hero-name {
+  font-size: 56px;
+  letter-spacing: 4px;
+  color: #22ff66;
+  text-shadow:
+    0 0 14px rgba(34,255,102,0.9),
+    0 0 36px rgba(34,255,102,0.7),
+    0 0 70px rgba(34,255,102,0.6);
+}
+
+.hero-subtitle {
+  color: #9affc4;
+  letter-spacing: 2px;
+}
+
+/* ================= HERO IMAGE (THE IMPORTANT PART) ================= */
+
+.hero-avatar {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  margin: 18px 0;
+}
+
+.hero-avatar img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+
+  border: 3px solid #22ff66;
+
+  box-shadow:
+    0 0 16px rgba(34,255,102,0.9),
+    0 0 40px rgba(34,255,102,0.7),
+    0 0 80px rgba(34,255,102,0.6);
+
+  animation: avatarPulse 2.8s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+
+/* CYBER GHOST RING */
+.hero-avatar::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 2px solid rgba(34,255,102,0.7);
+
+  box-shadow:
+    0 0 30px rgba(34,255,102,0.9),
+    0 0 70px rgba(34,255,102,0.6);
+
+  animation: ringPulse 2.8s ease-in-out infinite;
+  z-index: 1;
+}
+
+/* IMAGE PULSE */
+@keyframes avatarPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 16px rgba(34,255,102,0.9),
+      0 0 40px rgba(34,255,102,0.7),
+      0 0 80px rgba(34,255,102,0.6);
+  }
+  50% {
+    box-shadow:
+      0 0 28px rgba(34,255,102,1),
+      0 0 70px rgba(34,255,102,0.9),
+      0 0 140px rgba(34,255,102,0.8);
+  }
+}
+
+/* RING PULSE */
+@keyframes ringPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+/* ================= LINKS ================= */
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.hero-links a {
+  padding: 12px 28px;
+  border: 1px solid #22ff66;
+  color: #22ff66;
+  text-decoration: none;
+  font-family: monospace;
+  letter-spacing: 2px;
+  border-radius: 6px;
+  background: rgba(0,0,0,0.6);
+
+  transition: all 0.3s ease;
+}
+
+.hero-links a:hover {
+  background: #22ff66;
+  color: #000;
+  box-shadow:
+    0 0 30px rgba(34,255,102,1),
+    0 0 80px rgba(34,255,102,0.9);
+}
+
+/* ================= FOOTER TEXT ================= */
+.hero-footer {
+  color: #facc15;
+  letter-spacing: 3px;
+  font-family: monospace;
+  margin-top: 10px;
+  text-shadow:
+    0 0 6px rgba(250,204,21,0.8),
+    0 0 14px rgba(250,204,21,0.6);
+}
+
+/* ================= SECTIONS ================= */
+section {
+  padding: 80px 8%;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  color: #22ff66;
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 24px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  text-align: center;
+  padding: 24px;
+  font-family: monospace;
+  color: #22ff66;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .hero-name {
+    font-size: 36px;
+    letter-spacing: 2px;
+  }
+}
