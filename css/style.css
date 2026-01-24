@@ -64,6 +64,7 @@ section {
   align-items: center;
   gap: 22px;
   max-width: 900px;
+  width: 100%;
 }
 
 /* HERO NAME */
@@ -85,43 +86,54 @@ section {
   color: #9affc4;
 }
 
-/* ================= HERO IMAGE (WORKING VERSION) ================= */
+/* ================= HERO IMAGE (FINAL – SAFE VERSION) ================= */
 .landing-image {
   position: relative;
   width: 160px;
   height: 160px;
-  margin: 22px auto;
+  margin: 24px auto;
 }
 
+/* IMAGE */
 .landing-image img {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid #22ff66;
 
   box-shadow:
-    0 0 18px rgba(34,255,102,0.9),
-    0 0 45px rgba(34,255,102,0.7),
-    0 0 90px rgba(34,255,102,0.5);
+    0 0 18px rgba(34,255,102,0.8),
+    0 0 45px rgba(34,255,102,0.6),
+    0 0 90px rgba(34,255,102,0.4);
 
-  animation: pulse 3s ease-in-out infinite;
+  animation: neonPulse 3s ease-in-out infinite;
 }
 
-/* CYBER RING */
+/* CYBER GHOST RING */
 .landing-image::before {
   content: "";
   position: absolute;
   inset: -10px;
   border-radius: 50%;
   border: 2px solid rgba(34,255,102,0.6);
+
   box-shadow:
     0 0 25px rgba(34,255,102,0.8),
     0 0 60px rgba(34,255,102,0.6);
-  animation: spin 6s linear infinite;
+
+  animation: ringSpin 6s linear infinite;
 }
 
-@keyframes pulse {
+/* PULSE */
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 18px rgba(34,255,102,0.8),
+      0 0 45px rgba(34,255,102,0.6),
+      0 0 90px rgba(34,255,102,0.4);
+  }
   50% {
     box-shadow:
       0 0 30px rgba(34,255,102,1),
@@ -130,8 +142,10 @@ section {
   }
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
+/* RING ROTATION */
+@keyframes ringSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 /* ================= BUTTONS ================= */
@@ -152,7 +166,7 @@ section {
   text-decoration: none;
   letter-spacing: 2px;
   background: rgba(0,0,0,0.65);
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .landing-links a:hover,
@@ -161,10 +175,26 @@ section {
   color: #000;
 }
 
-/* ================= FOOTER TEXT ================= */
+/* ================= HERO FOOTER TEXT ================= */
 .landing-footer {
   margin-top: 28px;
   font-size: 12px;
   letter-spacing: 3px;
   color: #facc15;
+  text-shadow:
+    0 0 6px rgba(250,204,21,0.8),
+    0 0 14px rgba(250,204,21,0.6);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .hero.landing h1 {
+    font-size: 38px;
+    letter-spacing: 2px;
+  }
+
+  .landing-image {
+    width: 140px;
+    height: 140px;
+  }
 }
